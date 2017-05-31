@@ -1,0 +1,92 @@
+﻿序号: [1]
+描述: [生成最简单的SQL]
+表达式: SqlLam<Area> sql = new SqlLam<Area>();
+SQL: SELECT u.* FROM [T_Area] AS u    
+
+序号: [2]
+描述: [带别名的简单SQL]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("u");
+SQL: SELECT u.* FROM [T_Area] AS u    
+
+序号: [3]
+描述: [带别名的简单SQL2,和上面效果一样]
+表达式: SqlLam<Area> sql = new SqlLam<Area>();
+sql.As("u");
+SQL: SELECT u.* FROM [T_Area] AS u    
+
+序号: [4]
+描述: [SQL TOP * ]
+表达式: sql.Top(100);
+SQL: SELECT TOP (100) [T_Area].* FROM [T_Area]    
+
+序号: [5]
+描述: [SQL TOP * 带 percent ]
+表达式: sql.Top(100, true);
+SQL: SELECT TOP (100) PERCENT [T_Area].* FROM [T_Area]    
+
+序号: [6]
+描述: [SQL Select 只查一列 ]
+表达式: sql.Select(m => m.F_CreatorUserId);
+SQL: SELECT [T_Area].[AreaCode] FROM [T_Area]    
+
+序号: [7]
+描述: [SQL Select 查多列 ]
+表达式: sql.Select(m => m.F_CreatorUserId);
+SQL: SELECT [T_Area].[AreaCode],[T_Area].[AreaId],[T_Area].[Area_Name] AS AreaName FROM [T_Area]    
+
+序号: [8]
+描述: [SQL TOP 其他列 先写 TOP 再写 Select]
+表达式: sql.Top(100).Select(m => new { m.F_CreatorUserId, m.F_DeleteMark, m.F_EnCode });
+SQL: SELECT TOP (100) [T_Area].[AreaCode],[T_Area].[AreaId],[T_Area].[Area_Name] AS AreaName FROM [T_Area]    
+
+序号: [9]
+描述: [SQL TOP 其他列 先写 Select 再写 TOP, 其结果一样]
+表达式: sql.Top(100).Select(m => new { m.F_CreatorUserId, m.F_DeleteMark, m.F_EnCode });
+SQL: SELECT TOP (100) [T_Area].[AreaCode],[T_Area].[AreaId],[T_Area].[Area_Name] AS AreaName FROM [T_Area]    
+
+序号: [1]
+描述: [生成最简单的SQL]
+表达式: SqlLam<Area> sql = new SqlLam<Area>();
+SQL: SELECT u.* FROM [T_Area] AS u    
+
+序号: [2]
+描述: [带别名的简单SQL]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("u");
+SQL: SELECT u.* FROM [T_Area] AS u    
+
+序号: [3]
+描述: [带别名的简单SQL2,和上面效果一样]
+表达式: SqlLam<Area> sql = new SqlLam<Area>();
+sql.As("u");
+SQL: SELECT u.* FROM [T_Area] AS u    
+
+序号: [4]
+描述: [SQL TOP * ]
+表达式: sql.Top(100);
+SQL: SELECT TOP (100) [T_Area].* FROM [T_Area]    
+
+序号: [5]
+描述: [SQL TOP * 带 percent ]
+表达式: sql.Top(100, true);
+SQL: SELECT TOP (100) PERCENT [T_Area].* FROM [T_Area]    
+
+序号: [6]
+描述: [SQL Select 只查一列 ]
+表达式: sql.Select(m => m.F_CreatorUserId);
+SQL: SELECT [T_Area].[AreaCode] FROM [T_Area]    
+
+序号: [7]
+描述: [SQL Select 查多列 ]
+表达式: sql.Select(m => m.F_CreatorUserId);
+SQL: SELECT [T_Area].[AreaCode],[T_Area].[AreaId],[T_Area].[Area_Name] AS AreaName FROM [T_Area]    
+
+序号: [8]
+描述: [SQL TOP 其他列 先写 TOP 再写 Select]
+表达式: sql.Top(100).Select(m => new { m.F_CreatorUserId, m.F_DeleteMark, m.F_EnCode });
+SQL: SELECT TOP (100) [T_Area].[AreaCode],[T_Area].[AreaId],[T_Area].[Area_Name] AS AreaName FROM [T_Area]    
+
+序号: [9]
+描述: [SQL TOP 其他列 先写 Select 再写 TOP, 其结果一样]
+表达式: sql.Top(100).Select(m => new { m.F_CreatorUserId, m.F_DeleteMark, m.F_EnCode });
+SQL: SELECT TOP (100) [T_Area].[AreaCode],[T_Area].[AreaId],[T_Area].[Area_Name] AS AreaName FROM [T_Area]    
+

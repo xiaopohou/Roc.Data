@@ -1,0 +1,16 @@
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data\bin\Debug\Dll\MySql.Data.dll
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data\bin\Debug\Dll\Oracle.ManagedDataAccess.dll
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data\bin\Debug\Dll\System.Data.SQLite.dll
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data\bin\Debug\Roc.Data.dll
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data\bin\Debug\Roc.Data.pdb
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data\obj\Debug\Roc.Data.dll
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data\obj\Debug\Roc.Data.pdb
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data\obj\Debug\Roc.Data.csprojResolveAssemblyReference.cache
+C:\AAAAAAA\Janssen\JNJProject\Roc.Data\Roc.Data\bin\Debug\Dll\MySql.Data.dll
+C:\AAAAAAA\Janssen\JNJProject\Roc.Data\Roc.Data\bin\Debug\Dll\Oracle.ManagedDataAccess.dll
+C:\AAAAAAA\Janssen\JNJProject\Roc.Data\Roc.Data\bin\Debug\Dll\System.Data.SQLite.dll
+C:\AAAAAAA\Janssen\JNJProject\Roc.Data\Roc.Data\bin\Debug\Roc.Data.dll
+C:\AAAAAAA\Janssen\JNJProject\Roc.Data\Roc.Data\bin\Debug\Roc.Data.pdb
+C:\AAAAAAA\Janssen\JNJProject\Roc.Data\Roc.Data\obj\Debug\Roc.Data.csprojResolveAssemblyReference.cache
+C:\AAAAAAA\Janssen\JNJProject\Roc.Data\Roc.Data\obj\Debug\Roc.Data.dll
+C:\AAAAAAA\Janssen\JNJProject\Roc.Data\Roc.Data\obj\Debug\Roc.Data.pdb

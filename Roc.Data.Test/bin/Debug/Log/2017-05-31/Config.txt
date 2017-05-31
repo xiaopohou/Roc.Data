@@ -1,0 +1,900 @@
+﻿序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_ruIXN,@ParentId_Ul8af,@AreaCode_kBQrP,@AreaName_zgGJw,@QuickQuery_Eo7G7)
+参数: Key: [@AreaId_ruIXN], Value: []
+参数: Key: [@ParentId_Ul8af], Value: []
+参数: Key: [@AreaCode_kBQrP], Value: []
+参数: Key: [@AreaName_zgGJw], Value: [测试]
+参数: Key: [@QuickQuery_Eo7G7], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_UeDo7,[T_Area].[ParentId]=@ParentId_wgocz,[T_Area].[AreaCode]=@AreaCode_tY8nw,[T_Area].[Area_Name]=@AreaName_BkOfj,[T_Area].[QuickQuery]=@QuickQuery_kLE9Y FROM [T_Area] WHERE [T_Area].[Id] = @Id_vhdca
+参数: Key: [@AreaId_UeDo7], Value: []
+参数: Key: [@ParentId_wgocz], Value: []
+参数: Key: [@AreaCode_tY8nw], Value: []
+参数: Key: [@AreaName_BkOfj], Value: [测试]
+参数: Key: [@QuickQuery_kLE9Y], Value: []
+参数: Key: [@Id_vhdca], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_F7rEW,[T_Area].[Id]=@Id_E4KnJ,[T_Area].[Area_Name]=@AreaName_pbb7y FROM [T_Area] WHERE [T_Area].[Id] = @Id_oxVEY
+参数: Key: [@ParentId_F7rEW], Value: []
+参数: Key: [@Id_E4KnJ], Value: [0]
+参数: Key: [@AreaName_pbb7y], Value: [测试]
+参数: Key: [@Id_oxVEY], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_OGx26,@ParentId_EYEjQ,@AreaCode_gvDGJ,@AreaName_Bdl2h,@QuickQuery_UdFMJ)
+参数: Key: [@AreaId_OGx26], Value: []
+参数: Key: [@ParentId_EYEjQ], Value: []
+参数: Key: [@AreaCode_gvDGJ], Value: []
+参数: Key: [@AreaName_Bdl2h], Value: [测试]
+参数: Key: [@QuickQuery_UdFMJ], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_YYeyp,[T_Area].[ParentId]=@ParentId_rkRmG,[T_Area].[AreaCode]=@AreaCode_qbsYU,[T_Area].[Area_Name]=@AreaName_vfotk,[T_Area].[QuickQuery]=@QuickQuery_Yi23D FROM [T_Area] WHERE [T_Area].[Id] = @Id_reDnh
+参数: Key: [@AreaId_YYeyp], Value: []
+参数: Key: [@ParentId_rkRmG], Value: []
+参数: Key: [@AreaCode_qbsYU], Value: []
+参数: Key: [@AreaName_vfotk], Value: [测试]
+参数: Key: [@QuickQuery_Yi23D], Value: []
+参数: Key: [@Id_reDnh], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_VQzHb,[T_Area].[Id]=@Id_lN7ti,[T_Area].[Area_Name]=@AreaName_XkaCI FROM [T_Area] WHERE [T_Area].[Id] = @Id_Tn3od
+参数: Key: [@ParentId_VQzHb], Value: []
+参数: Key: [@Id_lN7ti], Value: [0]
+参数: Key: [@AreaName_XkaCI], Value: [测试]
+参数: Key: [@Id_Tn3od], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_INwVk,@ParentId_DXoVD,@AreaCode_nTWHr,@AreaName_y2PEY,@QuickQuery_c7986)
+参数: Key: [@AreaId_INwVk], Value: []
+参数: Key: [@ParentId_DXoVD], Value: []
+参数: Key: [@AreaCode_nTWHr], Value: []
+参数: Key: [@AreaName_y2PEY], Value: [测试]
+参数: Key: [@QuickQuery_c7986], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_kc9Fi,[T_Area].[ParentId]=@ParentId_NkU7J,[T_Area].[AreaCode]=@AreaCode_Sfpii,[T_Area].[Area_Name]=@AreaName_qc1JV,[T_Area].[QuickQuery]=@QuickQuery_s3rQF FROM [T_Area] WHERE [T_Area].[Id] = @Id_lnRqD
+参数: Key: [@AreaId_kc9Fi], Value: []
+参数: Key: [@ParentId_NkU7J], Value: []
+参数: Key: [@AreaCode_Sfpii], Value: []
+参数: Key: [@AreaName_qc1JV], Value: [测试]
+参数: Key: [@QuickQuery_s3rQF], Value: []
+参数: Key: [@Id_lnRqD], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_zLZD8,[T_Area].[Id]=@Id_Vmnu4,[T_Area].[Area_Name]=@AreaName_hVEUw FROM [T_Area] WHERE [T_Area].[Id] = @Id_y8Ui5
+参数: Key: [@ParentId_zLZD8], Value: []
+参数: Key: [@Id_Vmnu4], Value: [0]
+参数: Key: [@AreaName_hVEUw], Value: [测试]
+参数: Key: [@Id_y8Ui5], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_glmFS,@ParentId_RDzku,@AreaCode_GpfG8,@AreaName_bbAgO,@QuickQuery_hkBkw)
+参数: Key: [@AreaId_glmFS], Value: []
+参数: Key: [@ParentId_RDzku], Value: []
+参数: Key: [@AreaCode_GpfG8], Value: []
+参数: Key: [@AreaName_bbAgO], Value: [测试]
+参数: Key: [@QuickQuery_hkBkw], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_UkzTV,[T_Area].[ParentId]=@ParentId_DpwtB,[T_Area].[AreaCode]=@AreaCode_GXkZv,[T_Area].[Area_Name]=@AreaName_b22f9,[T_Area].[QuickQuery]=@QuickQuery_s8VXD FROM [T_Area] WHERE [T_Area].[Id] = @Id_CTaHY
+参数: Key: [@AreaId_UkzTV], Value: []
+参数: Key: [@ParentId_DpwtB], Value: []
+参数: Key: [@AreaCode_GXkZv], Value: []
+参数: Key: [@AreaName_b22f9], Value: [测试]
+参数: Key: [@QuickQuery_s8VXD], Value: []
+参数: Key: [@Id_CTaHY], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_vAnsL,[T_Area].[Id]=@Id_u1TbZ,[T_Area].[Area_Name]=@AreaName_AqrVi FROM [T_Area] WHERE [T_Area].[Id] = @Id_Td7KW
+参数: Key: [@ParentId_vAnsL], Value: []
+参数: Key: [@Id_u1TbZ], Value: [0]
+参数: Key: [@AreaName_AqrVi], Value: [测试]
+参数: Key: [@Id_Td7KW], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_GblU2,@ParentId_JLnBe,@AreaCode_rnjgT,@AreaName_ZrfXo,@QuickQuery_Ztgso)
+参数: Key: [@AreaId_GblU2], Value: []
+参数: Key: [@ParentId_JLnBe], Value: []
+参数: Key: [@AreaCode_rnjgT], Value: []
+参数: Key: [@AreaName_ZrfXo], Value: [测试]
+参数: Key: [@QuickQuery_Ztgso], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_HHh5D,[T_Area].[ParentId]=@ParentId_VyMWI,[T_Area].[AreaCode]=@AreaCode_orcQw,[T_Area].[Area_Name]=@AreaName_XUp8t,[T_Area].[QuickQuery]=@QuickQuery_pWZcS FROM [T_Area] WHERE [T_Area].[Id] = @Id_cTp1X
+参数: Key: [@AreaId_HHh5D], Value: []
+参数: Key: [@ParentId_VyMWI], Value: []
+参数: Key: [@AreaCode_orcQw], Value: []
+参数: Key: [@AreaName_XUp8t], Value: [测试]
+参数: Key: [@QuickQuery_pWZcS], Value: []
+参数: Key: [@Id_cTp1X], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_qf1rj,[T_Area].[Id]=@Id_FDnS1,[T_Area].[Area_Name]=@AreaName_MyEnC FROM [T_Area] WHERE [T_Area].[Id] = @Id_d1jiI
+参数: Key: [@ParentId_qf1rj], Value: []
+参数: Key: [@Id_FDnS1], Value: [0]
+参数: Key: [@AreaName_MyEnC], Value: [测试]
+参数: Key: [@Id_d1jiI], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_qJ7pj,@ParentId_Fjb91,@AreaCode_CDrdC,@AreaName_ANEcU,@QuickQuery_bVwkK)
+参数: Key: [@AreaId_qJ7pj], Value: []
+参数: Key: [@ParentId_Fjb91], Value: []
+参数: Key: [@AreaCode_CDrdC], Value: []
+参数: Key: [@AreaName_ANEcU], Value: [测试]
+参数: Key: [@QuickQuery_bVwkK], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_hOeRk,[T_Area].[ParentId]=@ParentId_rMJxl,[T_Area].[AreaCode]=@AreaCode_anwMs,[T_Area].[Area_Name]=@AreaName_wwscv,[T_Area].[QuickQuery]=@QuickQuery_hAtGt FROM [T_Area] WHERE [T_Area].[Id] = @Id_nN42E
+参数: Key: [@AreaId_hOeRk], Value: []
+参数: Key: [@ParentId_rMJxl], Value: []
+参数: Key: [@AreaCode_anwMs], Value: []
+参数: Key: [@AreaName_wwscv], Value: [测试]
+参数: Key: [@QuickQuery_hAtGt], Value: []
+参数: Key: [@Id_nN42E], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_rM2A1,[T_Area].[Id]=@Id_HPs43,[T_Area].[Area_Name]=@AreaName_DPlKd FROM [T_Area] WHERE [T_Area].[Id] = @Id_dEHoG
+参数: Key: [@ParentId_rM2A1], Value: []
+参数: Key: [@Id_HPs43], Value: [0]
+参数: Key: [@AreaName_DPlKd], Value: [测试]
+参数: Key: [@Id_dEHoG], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_yb392,@ParentId_rHqM5,@AreaCode_tthK6,@AreaName_rVFsl,@QuickQuery_IsSD1)
+参数: Key: [@AreaId_yb392], Value: []
+参数: Key: [@ParentId_rHqM5], Value: []
+参数: Key: [@AreaCode_tthK6], Value: []
+参数: Key: [@AreaName_rVFsl], Value: [测试]
+参数: Key: [@QuickQuery_IsSD1], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_bixRv,[T_Area].[ParentId]=@ParentId_FvcIg,[T_Area].[AreaCode]=@AreaCode_ecIqf,[T_Area].[Area_Name]=@AreaName_oJHbg,[T_Area].[QuickQuery]=@QuickQuery_CDvwc FROM [T_Area] WHERE [T_Area].[Id] = @Id_HAIIc
+参数: Key: [@AreaId_bixRv], Value: []
+参数: Key: [@ParentId_FvcIg], Value: []
+参数: Key: [@AreaCode_ecIqf], Value: []
+参数: Key: [@AreaName_oJHbg], Value: [测试]
+参数: Key: [@QuickQuery_CDvwc], Value: []
+参数: Key: [@Id_HAIIc], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_bo9QK,[T_Area].[Id]=@Id_XQ3XP,[T_Area].[Area_Name]=@AreaName_wRzfL FROM [T_Area] WHERE [T_Area].[Id] = @Id_jP23m
+参数: Key: [@ParentId_bo9QK], Value: []
+参数: Key: [@Id_XQ3XP], Value: [0]
+参数: Key: [@AreaName_wRzfL], Value: [测试]
+参数: Key: [@Id_jP23m], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_Cjj46,@ParentId_mBfvb,@AreaCode_AyZPs,@AreaName_xMbdX,@QuickQuery_fkpKY)
+参数: Key: [@AreaId_Cjj46], Value: []
+参数: Key: [@ParentId_mBfvb], Value: []
+参数: Key: [@AreaCode_AyZPs], Value: []
+参数: Key: [@AreaName_xMbdX], Value: [测试]
+参数: Key: [@QuickQuery_fkpKY], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_ImcRH,[T_Area].[ParentId]=@ParentId_xnWzo,[T_Area].[AreaCode]=@AreaCode_bqeTW,[T_Area].[Area_Name]=@AreaName_YDkNc,[T_Area].[QuickQuery]=@QuickQuery_VGQph FROM [T_Area] WHERE [T_Area].[Id] = @Id_Xwjuu
+参数: Key: [@AreaId_ImcRH], Value: []
+参数: Key: [@ParentId_xnWzo], Value: []
+参数: Key: [@AreaCode_bqeTW], Value: []
+参数: Key: [@AreaName_YDkNc], Value: [测试]
+参数: Key: [@QuickQuery_VGQph], Value: []
+参数: Key: [@Id_Xwjuu], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_AmPY1,[T_Area].[Id]=@Id_wFNtX,[T_Area].[Area_Name]=@AreaName_ijNOe FROM [T_Area] WHERE [T_Area].[Id] = @Id_fejui
+参数: Key: [@ParentId_AmPY1], Value: []
+参数: Key: [@Id_wFNtX], Value: [0]
+参数: Key: [@AreaName_ijNOe], Value: [测试]
+参数: Key: [@Id_fejui], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_vVbbS,@ParentId_vw74J,@AreaCode_nUxnz,@AreaName_aRlMX,@QuickQuery_BcsbW)
+参数: Key: [@AreaId_vVbbS], Value: []
+参数: Key: [@ParentId_vw74J], Value: []
+参数: Key: [@AreaCode_nUxnz], Value: []
+参数: Key: [@AreaName_aRlMX], Value: [测试]
+参数: Key: [@QuickQuery_BcsbW], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_BCXNa,[T_Area].[ParentId]=@ParentId_QVtKn,[T_Area].[AreaCode]=@AreaCode_TqogX,[T_Area].[Area_Name]=@AreaName_Fb84h,[T_Area].[QuickQuery]=@QuickQuery_WivgQ FROM [T_Area] WHERE [T_Area].[Id] = @Id_RkitO
+参数: Key: [@AreaId_BCXNa], Value: []
+参数: Key: [@ParentId_QVtKn], Value: []
+参数: Key: [@AreaCode_TqogX], Value: []
+参数: Key: [@AreaName_Fb84h], Value: [测试]
+参数: Key: [@QuickQuery_WivgQ], Value: []
+参数: Key: [@Id_RkitO], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_b1sRv,[T_Area].[Id]=@Id_FqLMe,[T_Area].[Area_Name]=@AreaName_fcKjx FROM [T_Area] WHERE [T_Area].[Id] = @Id_b2xAi
+参数: Key: [@ParentId_b1sRv], Value: []
+参数: Key: [@Id_FqLMe], Value: [0]
+参数: Key: [@AreaName_fcKjx], Value: [测试]
+参数: Key: [@Id_b2xAi], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_hgiAp,@ParentId_tScz1,@AreaCode_k79B5,@AreaName_BHbEo,@QuickQuery_bOWeJ)
+参数: Key: [@AreaId_hgiAp], Value: []
+参数: Key: [@ParentId_tScz1], Value: []
+参数: Key: [@AreaCode_k79B5], Value: []
+参数: Key: [@AreaName_BHbEo], Value: [测试]
+参数: Key: [@QuickQuery_bOWeJ], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_NEPGa,[T_Area].[ParentId]=@ParentId_PfPmT,[T_Area].[AreaCode]=@AreaCode_Av1bF,[T_Area].[Area_Name]=@AreaName_Uy4d7,[T_Area].[QuickQuery]=@QuickQuery_iiVlM FROM [T_Area] WHERE [T_Area].[Id] = @Id_cVZgU
+参数: Key: [@AreaId_NEPGa], Value: []
+参数: Key: [@ParentId_PfPmT], Value: []
+参数: Key: [@AreaCode_Av1bF], Value: []
+参数: Key: [@AreaName_Uy4d7], Value: [测试]
+参数: Key: [@QuickQuery_iiVlM], Value: []
+参数: Key: [@Id_cVZgU], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_CoOGs,[T_Area].[Id]=@Id_jjgAP,[T_Area].[Area_Name]=@AreaName_CMl87 FROM [T_Area] WHERE [T_Area].[Id] = @Id_zLRYb
+参数: Key: [@ParentId_CoOGs], Value: []
+参数: Key: [@Id_jjgAP], Value: [0]
+参数: Key: [@AreaName_CMl87], Value: [测试]
+参数: Key: [@Id_zLRYb], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_rU4eu,@ParentId_JGyMr,@AreaCode_ihFya,@AreaName_pOGl8,@QuickQuery_WVWNA)
+参数: Key: [@AreaId_rU4eu], Value: []
+参数: Key: [@ParentId_JGyMr], Value: []
+参数: Key: [@AreaCode_ihFya], Value: []
+参数: Key: [@AreaName_pOGl8], Value: [测试]
+参数: Key: [@QuickQuery_WVWNA], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_z4EUa,[T_Area].[ParentId]=@ParentId_kLzTA,[T_Area].[AreaCode]=@AreaCode_rymWc,[T_Area].[Area_Name]=@AreaName_LesTn,[T_Area].[QuickQuery]=@QuickQuery_q23aq FROM [T_Area] WHERE [T_Area].[Id] = @Id_jB4gK
+参数: Key: [@AreaId_z4EUa], Value: []
+参数: Key: [@ParentId_kLzTA], Value: []
+参数: Key: [@AreaCode_rymWc], Value: []
+参数: Key: [@AreaName_LesTn], Value: [测试]
+参数: Key: [@QuickQuery_q23aq], Value: []
+参数: Key: [@Id_jB4gK], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_WZR9b,[T_Area].[Id]=@Id_dCLTS,[T_Area].[Area_Name]=@AreaName_VSlVd FROM [T_Area] WHERE [T_Area].[Id] = @Id_KqLxa
+参数: Key: [@ParentId_WZR9b], Value: []
+参数: Key: [@Id_dCLTS], Value: [0]
+参数: Key: [@AreaName_VSlVd], Value: [测试]
+参数: Key: [@Id_KqLxa], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_kETi3,@ParentId_tiB6e,@AreaCode_lNU7x,@AreaName_lNP8Y,@QuickQuery_qKB7J)
+参数: Key: [@AreaId_kETi3], Value: []
+参数: Key: [@ParentId_tiB6e], Value: []
+参数: Key: [@AreaCode_lNU7x], Value: []
+参数: Key: [@AreaName_lNP8Y], Value: [测试]
+参数: Key: [@QuickQuery_qKB7J], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_Xe2Vk,[T_Area].[ParentId]=@ParentId_ajEHA,[T_Area].[AreaCode]=@AreaCode_YB9pB,[T_Area].[Area_Name]=@AreaName_ruPJT,[T_Area].[QuickQuery]=@QuickQuery_TMu9P FROM [T_Area] WHERE [T_Area].[Id] = @Id_E5ziU
+参数: Key: [@AreaId_Xe2Vk], Value: []
+参数: Key: [@ParentId_ajEHA], Value: []
+参数: Key: [@AreaCode_YB9pB], Value: []
+参数: Key: [@AreaName_ruPJT], Value: [测试]
+参数: Key: [@QuickQuery_TMu9P], Value: []
+参数: Key: [@Id_E5ziU], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_GrMC8,[T_Area].[Id]=@Id_lYyRS,[T_Area].[Area_Name]=@AreaName_viujc FROM [T_Area] WHERE [T_Area].[Id] = @Id_luC5t
+参数: Key: [@ParentId_GrMC8], Value: []
+参数: Key: [@Id_lYyRS], Value: [0]
+参数: Key: [@AreaName_viujc], Value: [测试]
+参数: Key: [@Id_luC5t], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_dHxUX,@ParentId_DYvUK,@AreaCode_hc7gc,@AreaName_uUjto,@QuickQuery_EcpZV)
+参数: Key: [@AreaId_dHxUX], Value: []
+参数: Key: [@ParentId_DYvUK], Value: []
+参数: Key: [@AreaCode_hc7gc], Value: []
+参数: Key: [@AreaName_uUjto], Value: [测试]
+参数: Key: [@QuickQuery_EcpZV], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_GbNgH,[T_Area].[ParentId]=@ParentId_jQidJ,[T_Area].[AreaCode]=@AreaCode_Zobsf,[T_Area].[Area_Name]=@AreaName_FcixL,[T_Area].[QuickQuery]=@QuickQuery_EBo74 FROM [T_Area] WHERE [T_Area].[Id] = @Id_pncKz
+参数: Key: [@AreaId_GbNgH], Value: []
+参数: Key: [@ParentId_jQidJ], Value: []
+参数: Key: [@AreaCode_Zobsf], Value: []
+参数: Key: [@AreaName_FcixL], Value: [测试]
+参数: Key: [@QuickQuery_EBo74], Value: []
+参数: Key: [@Id_pncKz], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_nytvM,[T_Area].[Id]=@Id_odz7j,[T_Area].[Area_Name]=@AreaName_uIMBz FROM [T_Area] WHERE [T_Area].[Id] = @Id_xy6ZK
+参数: Key: [@ParentId_nytvM], Value: []
+参数: Key: [@Id_odz7j], Value: [0]
+参数: Key: [@AreaName_uIMBz], Value: [测试]
+参数: Key: [@Id_xy6ZK], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_Btsxb,@ParentId_OB67c,@AreaCode_N6Wwk,@AreaName_wpptv,@QuickQuery_uZGeA)
+参数: Key: [@AreaId_Btsxb], Value: []
+参数: Key: [@ParentId_OB67c], Value: []
+参数: Key: [@AreaCode_N6Wwk], Value: []
+参数: Key: [@AreaName_wpptv], Value: [测试]
+参数: Key: [@QuickQuery_uZGeA], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_BbhLc,[T_Area].[ParentId]=@ParentId_iN3uv,[T_Area].[AreaCode]=@AreaCode_t8IGB,[T_Area].[Area_Name]=@AreaName_RYNX7,[T_Area].[QuickQuery]=@QuickQuery_JheUY FROM [T_Area] WHERE [T_Area].[Id] = @Id_HuWie
+参数: Key: [@AreaId_BbhLc], Value: []
+参数: Key: [@ParentId_iN3uv], Value: []
+参数: Key: [@AreaCode_t8IGB], Value: []
+参数: Key: [@AreaName_RYNX7], Value: [测试]
+参数: Key: [@QuickQuery_JheUY], Value: []
+参数: Key: [@Id_HuWie], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_fBi3u,[T_Area].[Id]=@Id_x84OT,[T_Area].[Area_Name]=@AreaName_Imczb FROM [T_Area] WHERE [T_Area].[Id] = @Id_CZd4d
+参数: Key: [@ParentId_fBi3u], Value: []
+参数: Key: [@Id_x84OT], Value: [0]
+参数: Key: [@AreaName_Imczb], Value: [测试]
+参数: Key: [@Id_CZd4d], Value: [0]
+
+序号: [1]
+描述: [特性配置表名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [2]
+描述: [全局配置表名]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [3]
+描述: [全局配置表名两种方式都存在]
+表达式: SqlTableEntity areaTable = new SqlTableEntity(typeof(Area), "T_Area");GlobalConfig.Tables.Add(areaTable);
+SQL: SELECT a.* FROM [T_Area] AS a    
+
+序号: [4]
+描述: [特性配置列名]
+表达式: SqlLam<Area> sql = new SqlLam<Area>("a", type);sql.Select(m => m.AreaName);
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [5]
+描述: [全局配置列名]
+表达式: areaTable.Columns.Add(new SqlColumnEntity("AreaName", "F_AreaName"));
+SQL: SELECT [T_Area].[Area_Name] FROM [T_Area]    
+
+序号: [6]
+描述: [忽略查询列名]
+表达式:  sql.Select(m => new { m.AreaName, m.Layer });
+SQL: SELECT [T_Area].[Area_Name] AS AreaName,[T_Area].[Layer] FROM [T_Area]    
+
+序号: [7]
+描述: [忽略插入列名]
+表达式:  sql.Insert(a);
+SQL: INSERT INTO [T_Area] ([AreaId],[ParentId],[AreaCode],[AreaName],[QuickQuery]) VALUES (@AreaId_Tc9hM,@ParentId_b6Ebb,@AreaCode_Rl9H6,@AreaName_LuNZW,@QuickQuery_UUvI3)
+参数: Key: [@AreaId_Tc9hM], Value: []
+参数: Key: [@ParentId_b6Ebb], Value: []
+参数: Key: [@AreaCode_Rl9H6], Value: []
+参数: Key: [@AreaName_LuNZW], Value: [测试]
+参数: Key: [@QuickQuery_UUvI3], Value: []
+
+序号: [8]
+描述: [忽略修改列名]
+表达式:  sql.Update(a, false);
+SQL: UPDATE [T_Area] SET [T_Area].[AreaId]=@AreaId_XVqhr,[T_Area].[ParentId]=@ParentId_gSLFI,[T_Area].[AreaCode]=@AreaCode_iR1NF,[T_Area].[Area_Name]=@AreaName_FdGan,[T_Area].[QuickQuery]=@QuickQuery_baG2j FROM [T_Area] WHERE [T_Area].[Id] = @Id_Kl3tu
+参数: Key: [@AreaId_XVqhr], Value: []
+参数: Key: [@ParentId_gSLFI], Value: []
+参数: Key: [@AreaCode_iR1NF], Value: []
+参数: Key: [@AreaName_FdGan], Value: [测试]
+参数: Key: [@QuickQuery_baG2j], Value: []
+参数: Key: [@Id_Kl3tu], Value: [0]
+
+序号: [9]
+描述: [忽略修改列名部分字段]
+表达式:  sql.Update(a, m => new { m.ParentId, m.Id, m.AreaName }).Where(m => m.Id);
+SQL: UPDATE [T_Area] SET [T_Area].[ParentId]=@ParentId_zSY2g,[T_Area].[Id]=@Id_p38M5,[T_Area].[Area_Name]=@AreaName_htMhW FROM [T_Area] WHERE [T_Area].[Id] = @Id_LGrWU
+参数: Key: [@ParentId_zSY2g], Value: []
+参数: Key: [@Id_p38M5], Value: [0]
+参数: Key: [@AreaName_htMhW], Value: [测试]
+参数: Key: [@Id_LGrWU], Value: [0]
+

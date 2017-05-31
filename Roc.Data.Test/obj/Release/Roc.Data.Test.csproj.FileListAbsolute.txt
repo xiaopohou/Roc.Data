@@ -1,0 +1,11 @@
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\bin\Release\Roc.Data.Test.exe.config
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\bin\Release\Dll\MySql.Data.dll
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\bin\Release\Dll\Oracle.ManagedDataAccess.dll
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\bin\Release\Roc.Data.Test.exe
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\bin\Release\Roc.Data.Test.pdb
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\bin\Release\Roc.Data.dll
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\bin\Release\Roc.Data.pdb
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\obj\Release\Roc.Data.Test.csprojResolveAssemblyReference.cache
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\obj\Release\Roc.Data.Test.exe
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\obj\Release\Roc.Data.Test.pdb
+C:\AAAAAAA\GitHub\Roc.Data\Roc.Data.Test\bin\Release\Dll\System.Data.SQLite.dll
